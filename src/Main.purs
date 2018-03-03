@@ -29,8 +29,7 @@ instance nilBuildForm :: BuildForm OrderingNil spec where
   buildForm _ _ = mempty
 
 instance consBuildFrom ::
-  ( IsSymbol label
-  , RowCons label ty trash spec
+  ( RowCons label ty trash spec
   , RenderInput label ty
   , BuildForm tail spec
   ) => BuildForm (OrderingCons label tail) spec where
